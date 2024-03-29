@@ -10,9 +10,6 @@ export default function LazyLoading() {
       <NavLink to="/About">
        <p> About Us</p>
       </NavLink>
-      <NavLink to="/Contact">
-        <p>Contact</p>
-      </NavLink>
     </div>
   );
 }

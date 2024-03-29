@@ -1,7 +1,7 @@
 import React from "react";
 import useCustomHook from "./useCustomHook";
 
-function Counter1() {
+function Counter() {
   const [count, Increment, Decrement] = useCustomHook();
   const [myCount, myIncrement, myDecrement] = useCustomHook(5);
 
@@ -20,4 +20,4 @@ function Counter1() {
   );
 }
 
-export default Counter1;
+export default Counter;
