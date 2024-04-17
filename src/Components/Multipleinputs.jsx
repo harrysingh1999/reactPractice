@@ -14,7 +14,7 @@ export default function Multipleinputs() {
   const handleChange = (e) => {
     setFormData((prevData) => {
       const { name, value } = e.target;
-      return { ...prevData, [name]: value };  
+      return { ...prevData, [name]: value };
     });
   };
 

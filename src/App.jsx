@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import React, { Suspense } from "react";
-import Home from "./Components/Home/Home";
+import Home from "./Components/Home";
 
 function App() {
   return (
     <>
-      <Home/>
-       <Suspense fallback={<div>Loading........</div>}>
+      <Home />
+      <Suspense fallback={<div>Loading........</div>}>
         <Outlet />
       </Suspense>
     </>

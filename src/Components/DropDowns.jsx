@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 export default function DropDowns() {
-    const [state, setStates] = useState(0);
+  const [state, setStates] = useState(0);
 
-    const states = [
-        {state: 'Delhi', City: ['New Delhi']},
-        {state: 'Haryana', City: ['Hissar', 'Gurgaon']},
-        {state: 'Uttrakhand', City: ['Dehradun', 'Pauri Garhwal']},
-      ]
+  const states = [
+    { state: "Delhi", City: ["New Delhi"] },
+    { state: "Haryana", City: ["Hissar", "Gurgaon"] },
+    { state: "Uttrakhand", City: ["Dehradun", "Pauri Garhwal"] },
+  ];
 
   return (
     <div>
@@ -15,11 +15,14 @@ export default function DropDowns() {
         2 dropdowns with State and Cities
       </h1>
       <div className="m-10">
-        <select onChange={(e) => setStates(e.target.value)} value={state} 
-        className="border-black border">
+        <select
+          onChange={(e) => setStates(e.target.value)}
+          value={state}
+          className="border-black border"
+        >
           {states.map((item, i) => {
             return (
-                <option value={i} key={crypto.randomUUID()}>
+              <option value={i} key={crypto.randomUUID()}>
                 {item.state}
               </option>
             );

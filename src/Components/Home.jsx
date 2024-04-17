@@ -4,7 +4,9 @@ import { NavLink } from "react-router-dom";
 export default function Home() {
   return (
     <div>
-      <h1 className="text-4xl text-blue-600 text-center mt-10">All Components of the App</h1>
+      <h1 className="text-4xl text-blue-600 text-center mt-10">
+        All Components of the App
+      </h1>
       <div className="flex justify-evenly mt-10">
         <NavLink to="/">
           <p>Home</p>
@@ -29,6 +31,9 @@ export default function Home() {
         </NavLink>
         <NavLink to="/CenterElements">
           <p>Center Elements</p>
+        </NavLink>
+        <NavLink to="/InputCaseChange">
+          <p>Change String Input Case Accordion to even and Odd</p>
         </NavLink>
       </div>
     </div>

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 export default function Accordion() {
-    const [Accordion, setAccordion] = useState(false);
+  const [Accordion, setAccordion] = useState(false);
   return (
     <div>
-         <h1 className="text-2xl font-semibold m-10 ">Accordion</h1>
+      <h1 className="text-2xl font-semibold m-10 ">Accordion</h1>
       <div className="w-1/2 m-auto flex flex-col shadow-lg">
         <div className="flex justify-between shadow-lg">
           <p className="ms-4 p-2 font-semibold">Accordion</p>
@@ -37,5 +37,5 @@ export default function Accordion() {
         </div>
       </div>
     </div>
-  )
+  );
 }
