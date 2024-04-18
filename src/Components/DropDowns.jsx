@@ -1,13 +1,8 @@
 import React, { useState } from "react";
+import { states } from "../Constants/Constants";
 
 export default function DropDowns() {
   const [state, setStates] = useState(0);
-
-  const states = [
-    { state: "Delhi", City: ["New Delhi"] },
-    { state: "Haryana", City: ["Hissar", "Gurgaon"] },
-    { state: "Uttrakhand", City: ["Dehradun", "Pauri Garhwal"] },
-  ];
 
   return (
     <div>

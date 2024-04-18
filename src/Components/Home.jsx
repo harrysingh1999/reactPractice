@@ -7,7 +7,7 @@ export default function Home() {
       <h1 className="text-4xl text-blue-600 text-center mt-10">
         All Components of the App
       </h1>
-      <div className="flex justify-evenly mt-10">
+      <div className="flex justify-evenly flex-nowrap mt-10">
         <NavLink to="/">
           <p>Home</p>
         </NavLink>
@@ -26,14 +26,14 @@ export default function Home() {
         <NavLink to="/Counter">
           <p> Custom Hook</p>
         </NavLink>
-        <NavLink to="/LazyLoading">
-          <p>Lazy Loading</p>
-        </NavLink>
         <NavLink to="/CenterElements">
           <p>Center Elements</p>
         </NavLink>
         <NavLink to="/InputCaseChange">
-          <p>Change String Input Case Accordion to even and Odd</p>
+          <p>Change String Input Case</p>
+        </NavLink>
+        <NavLink to="/ImageSlider">
+          <p>Image Slider/Carousel</p>
         </NavLink>
       </div>
     </div>

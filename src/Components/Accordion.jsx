@@ -5,15 +5,13 @@ export default function Accordion() {
   return (
     <div>
       <h1 className="text-2xl font-semibold m-10 ">Accordion</h1>
-      <div className="w-1/2 m-auto flex flex-col shadow-lg">
-        <div className="flex justify-between shadow-lg">
+      <div className="w-1/2 m-auto flex flex-col shadow-lg cursor-pointer">
+        <div
+          className="flex justify-between shadow-lg"
+          onClick={() => setAccordion(!Accordion)}
+        >
           <p className="ms-4 p-2 font-semibold">Accordion</p>
-          <span
-            className="p-2 cursor-pointer"
-            onClick={() => setAccordion(!Accordion)}
-          >
-            ⬇️
-          </span>
+          <span className="p-2 cursor-pointer">⬇️</span>
         </div>
         <div>
           {Accordion && (
