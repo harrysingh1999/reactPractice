@@ -15,6 +15,7 @@ import Counter from "./Components/customHookPractice/Counter.jsx";
 import DropDowns from "./Components/DropDowns.jsx";
 import Multipleinputs from "./Components/Multipleinputs.jsx";
 import ImageSlider from "./Components/ImageSlider.jsx";
+import ProgressBar from "./Components/ProgressBar.jsx";
 
 const InputCaseChange = lazy(() => import("./Components/InputCaseChange.jsx"));
 
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
       <Route path="/Multipleinputs" element={<Multipleinputs />} />
       <Route path="/InputCaseChange" element={<InputCaseChange />} />
       <Route path="/ImageSlider" element={<ImageSlider />} />
+      <Route path="/ProgressBar" element={<ProgressBar />} />
     </Route>
   )
 );

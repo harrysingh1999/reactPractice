@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <h1 className="text-4xl text-blue-600 text-center mt-10">
-        All Components of the App
+        Practice Components
       </h1>
       <div className="flex justify-evenly flex-nowrap mt-10">
         <NavLink to="/">
@@ -34,6 +34,9 @@ export default function Home() {
         </NavLink>
         <NavLink to="/ImageSlider">
           <p>Image Slider/Carousel</p>
+        </NavLink>
+        <NavLink to="/ProgressBar">
+          <p>Progress Bar</p>
         </NavLink>
       </div>
     </div>
