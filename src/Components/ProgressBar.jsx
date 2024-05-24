@@ -3,26 +3,31 @@ import React, { useEffect, useState } from "react";
 export default function ProgressBar() {
   const [percentage, setPercentage] = useState(0);
 
-  const getPercentage = () => {
-    const interval = setInterval(() => {
-      setPercentage((pre) => pre + 1);
-    }, 100);
-    console.log(percentage);
-    if (percentage === 100) {
-      console.log("idid");
-    }
-  };
-
   useEffect(() => {
-    // getPercentage();
+    const interval = setInterval(() => {
+      setPercentage((prevPercentage) => {
+        if (prevPercentage === 100) {
+          clearInterval(interval);
+          return 100;
+        }
+        return prevPercentage + 2;
+      });
+    }, 100);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center mt-10">
-      <h1>Progress Bar</h1>
-      <div className="w-80 border border-gray-500 rounded-lg m-4 text-center">
-        <span className="text-center">{percentage}%</span>
+    <>
+      <div className="flex flex-col items-center justify-center h-[70vh] ">
+        <h1>Progress Bar</h1>
+        <div className="w-[500px] border border-gray-500 rounded-lg m-4 overflow-hidden h-[30px] relative">
+          <span className="absolute flex justify-center w-[100%]">
+            {percentage}%
+          </span>
+          <p className={`w-${percentage}% h-[100%] bg-green-400`} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
