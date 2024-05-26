@@ -21,11 +21,17 @@ export default function ProgressBar() {
     <>
       <div className="flex flex-col items-center justify-center h-[70vh] ">
         <h1>Progress Bar</h1>
-        <div className="w-[500px] border border-gray-500 rounded-lg m-4 overflow-hidden h-[30px] relative">
-          <span className="absolute flex justify-center w-[100%]">
+        <div className="w-[500px] h-8 border border-gray-500 rounded-lg m-4 overflow-hidden relative">
+          <span className="absolute w-full h-full flex items-center justify-center">
             {percentage}%
           </span>
-          <p className={`w-${percentage}% h-[100%] bg-green-400`} />
+          <p
+            style={{
+              width: `${percentage}%`,
+              height: "100%",
+              backgroundColor: "#01F802",
+            }}
+          />
         </div>
       </div>
     </>
