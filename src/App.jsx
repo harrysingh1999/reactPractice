@@ -1,15 +1,12 @@
 import { Outlet } from "react-router-dom";
 import React, { Suspense } from "react";
-import "./App.css";
-import LazyLoading from "./LazyLoadingPractice/LazyLoading";
-import Counter1 from "./customHookPractice/Counter1";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
     <>
-      {/* <LazyLoading /> */}
-      <Counter1/>
-       <Suspense fallback={<div>Laoding........</div>}>
+       <Header/>
+       <Suspense fallback={<div>Loading........</div>}>
         <Outlet />
       </Suspense>
     </>
