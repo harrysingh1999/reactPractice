@@ -11,3 +11,18 @@ export const states = [
   { state: "Haryana", City: ["Hissar", "Gurgaon"] },
   { state: "Uttrakhand", City: ["Dehradun", "Pauri Garhwal"] },
 ];
+
+export const faq = [
+  {
+    question: "What is your Name",
+    answer: "Harvinder Singh",
+  },
+  {
+    question: "What is your Profession",
+    answer: "Software Engineer",
+  },
+  {
+    question: "What is Favourite Sport",
+    answer: "Cricket",
+  },
+];
