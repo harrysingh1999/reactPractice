@@ -38,6 +38,12 @@ export default function Home() {
         <NavLink to="/ProgressBar">
           <p>Progress Bar</p>
         </NavLink>
+        <NavLink to="/NumberCycler">
+          <p>Number Cycler</p>
+        </NavLink>
+        <NavLink to="/DayOfWeek">
+          <p>Get Day of Week from Date</p>
+        </NavLink>
       </div>
     </div>
   );

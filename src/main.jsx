@@ -16,8 +16,12 @@ import DropDowns from "./Components/DropDowns.jsx";
 import Multipleinputs from "./Components/Multipleinputs.jsx";
 import ImageSlider from "./Components/ImageSlider.jsx";
 import ProgressBar from "./Components/ProgressBar.jsx";
+import NumberCycler from "./Components/NumberCycler.jsx";
+import DayOfWeek from "./Components/DayofWeek.jsx";
 
 const InputCaseChange = lazy(() => import("./Components/InputCaseChange.jsx"));
+
+const numbers = [10, 20, 30, 40, 50];
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +35,11 @@ const router = createBrowserRouter(
       <Route path="/InputCaseChange" element={<InputCaseChange />} />
       <Route path="/ImageSlider" element={<ImageSlider />} />
       <Route path="/ProgressBar" element={<ProgressBar />} />
+      <Route
+        path="/NumberCycler"
+        element={<NumberCycler numbers={numbers} />}
+      />
+      <Route path="/DayOfWeek" element={<DayOfWeek date="2024-08-24" />} />
     </Route>
   )
 );
