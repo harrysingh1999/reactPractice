@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div>
+    <div className="mx-10">
       <h1 className="text-4xl text-blue-600 text-center mt-10">
         Practice Components
       </h1>
-      <div className="flex justify-evenly flex-nowrap mt-10">
+      <div className="flex justify-around gap-10 flex-wrap my-10">
         <NavLink to="/">
           <p>Home</p>
         </NavLink>
@@ -43,6 +43,9 @@ export default function Home() {
         </NavLink>
         <NavLink to="/DayOfWeek">
           <p>Get Day of Week from Date</p>
+        </NavLink>
+        <NavLink to="/StopWatch">
+          <p>StopWatch</p>
         </NavLink>
       </div>
     </div>

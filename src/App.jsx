@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import React, { Suspense, useEffect } from "react";
+import React, { useEffect } from "react";
 import Home from "./Components/Home";
 
 function App() {
@@ -12,9 +12,7 @@ function App() {
   return (
     <>
       <Home />
-      <Suspense fallback={<div>Loading........</div>}>
-        <Outlet />
-      </Suspense>
+      <Outlet />
     </>
   );
 }

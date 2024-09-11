@@ -18,6 +18,7 @@ import ImageSlider from "./Components/ImageSlider.jsx";
 import ProgressBar from "./Components/ProgressBar.jsx";
 import NumberCycler from "./Components/NumberCycler.jsx";
 import DayOfWeek from "./Components/DayofWeek.jsx";
+import StopWatch from "./Components/StopWatch.jsx";
 
 const InputCaseChange = lazy(() => import("./Components/InputCaseChange.jsx"));
 
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
       <Route path="/InputCaseChange" element={<InputCaseChange />} />
       <Route path="/ImageSlider" element={<ImageSlider />} />
       <Route path="/ProgressBar" element={<ProgressBar />} />
+      <Route path="/StopWatch" element={<StopWatch />} />
       <Route
         path="/NumberCycler"
         element={<NumberCycler numbers={numbers} />}
