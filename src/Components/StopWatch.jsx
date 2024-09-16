@@ -5,23 +5,23 @@ export default function StopWatch() {
   const [text, setText] = useState("");
   const [text2, setText2] = useState("");
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (text2 === "restart") {
-        setCount(0);
-        setText("");
-        setText2("");
-      }
-      if (text2 === "pause") {
-        clearInterval(timer);
-      }
-      if (text2 === "" || text2 === "start") {
-        setCount((prevCount) => prevCount + 1);
-      }
-    }, 800);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     if (text2 === "restart") {
+  //       setCount(0);
+  //       setText("");
+  //       setText2("");
+  //     }
+  //     if (text2 === "pause") {
+  //       clearInterval(timer);
+  //     }
+  //     if (text2 === "" || text2 === "start") {
+  //       setCount((prevCount) => prevCount + 1);
+  //     }
+  //   }, 800);
 
-    return () => clearInterval(timer);
-  }, [text, text2]);
+  //   return () => clearInterval(timer);
+  // }, [text, text2]);
 
   const handleChange = (e) => {
     setText(e.target.value);

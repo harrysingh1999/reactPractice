@@ -47,6 +47,9 @@ export default function Home() {
         <NavLink to="/StopWatch">
           <p>StopWatch</p>
         </NavLink>
+        <NavLink to="/useCallback">
+          <p>UseCallback Demo</p>
+        </NavLink>
       </div>
     </div>
   );

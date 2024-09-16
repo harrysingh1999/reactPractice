@@ -8,7 +8,7 @@ export default function InputCaseChange() {
     const handleChange = () => {
       let modifiedText = "";
       for (let i = 0; i < text.length; i++) {
-        if (i % 2 === 0) {
+        if (i % 2 === 1) {
           modifiedText += text[i].toUpperCase();
         } else {
           modifiedText += text[i].toLowerCase();
@@ -19,7 +19,8 @@ export default function InputCaseChange() {
     handleChange();
   }, [text]);
   return (
-    <div>
+    <div className="mx-20">
+      <h1 className="text-4xl text-center font-semibold">Change Input Case</h1>
       <input
         className="border border-black"
         type="text"
