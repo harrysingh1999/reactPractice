@@ -12,7 +12,7 @@ export default function ProgressBar() {
         }
         return prevPercentage + 2;
       });
-    }, 100);
+    }, 70);
 
     return () => clearInterval(interval);
   }, []);
@@ -25,6 +25,7 @@ export default function ProgressBar() {
           <span className="absolute w-full h-full flex items-center justify-center">
             {percentage}%
           </span>
+
           <p
             style={{
               width: `${percentage}%`,

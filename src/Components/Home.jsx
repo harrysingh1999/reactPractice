@@ -50,6 +50,9 @@ export default function Home() {
         <NavLink to="/MemoizationHooksDemo">
           <p>MemoizationHooks Demo</p>
         </NavLink>
+        <NavLink to="/SwitchPlayer">
+          <p>Key Keyword usage</p>
+        </NavLink>
       </div>
     </div>
   );

@@ -20,6 +20,7 @@ import NumberCycler from "./Components/NumberCycler.jsx";
 import DayOfWeek from "./Components/DayofWeek.jsx";
 import StopWatch from "./Components/StopWatch.jsx";
 import MemoizationHooksDemo from "./Components/OptimizationHooks/MemoizationHooksDemo.jsx";
+import SwitchPlayer from "./Components/PlayerScores/SwitchPlayer.jsx";
 
 const InputCaseChange = lazy(() => import("./Components/InputCaseChange.jsx"));
 
@@ -39,6 +40,7 @@ const router = createBrowserRouter(
       <Route path="/ProgressBar" element={<ProgressBar />} />
       <Route path="/StopWatch" element={<StopWatch />} />
       <Route path="/MemoizationHooksDemo" element={<MemoizationHooksDemo />} />
+      <Route path="/SwitchPlayer" element={<SwitchPlayer />} />
       <Route
         path="/NumberCycler"
         element={<NumberCycler numbers={numbers} />}
