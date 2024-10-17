@@ -53,6 +53,9 @@ export default function Home() {
         <NavLink to="/SwitchPlayer">
           <p>Key Keyword usage</p>
         </NavLink>
+        <NavLink to="/HOC-Example">
+          <p>Higher Order Component</p>
+        </NavLink>
       </div>
     </div>
   );

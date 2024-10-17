@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import PlayerScore from "./PlayerScore";
 
 export default function SwitchPlayer() {

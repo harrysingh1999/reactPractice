@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { images } from "../Constants/Constants";
 
 export default function ImageSlider() {

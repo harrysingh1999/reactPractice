@@ -21,6 +21,7 @@ import DayOfWeek from "./Components/DayofWeek.jsx";
 import StopWatch from "./Components/StopWatch.jsx";
 import MemoizationHooksDemo from "./Components/OptimizationHooks/MemoizationHooksDemo.jsx";
 import SwitchPlayer from "./Components/PlayerScores/SwitchPlayer.jsx";
+import HOCCounter from "./Components/HOC/HOCCounter.jsx";
 
 const InputCaseChange = lazy(() => import("./Components/InputCaseChange.jsx"));
 
@@ -46,6 +47,7 @@ const router = createBrowserRouter(
         element={<NumberCycler numbers={numbers} />}
       />
       <Route path="/DayOfWeek" element={<DayOfWeek date="2024-08-24" />} />
+      <Route path="/HOC-Example" element={<HOCCounter />} />
     </Route>
   )
 );
