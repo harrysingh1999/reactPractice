@@ -26,3 +26,22 @@ export const faq = [
     answer: "Cricket",
   },
 ];
+
+export const navItems = [
+  { path: "/", title: "Home" },
+  { path: "/Accordion", title: "Accordion" },
+  { path: "/Modal", title: "Modal" },
+  { path: "/DropDowns", title: "DropDowns" },
+  { path: "/Multipleinputs", title: "Multiple Inputs" },
+  { path: "/Counter", title: "Custom Hook" },
+  { path: "/CenterElements", title: "Center Elements" },
+  { path: "/InputCaseChange", title: "Change String Input Case" },
+  { path: "/ImageSlider", title: "Image Slider/Carousel" },
+  { path: "/NumberCycler", title: "Number Cycler" },
+  { path: "/DayOfWeek", title: "Get Day of Week from Date" },
+  { path: "/StopWatch", title: "StopWatch" },
+  { path: "/MemoizationHooksDemo", title: "MemoizationHooks Demo" },
+  { path: "/SwitchPlayer", title: "Key Keyword usage" },
+  { path: "/HOC-Example", title: "Higher Order Component" },
+  { path: "/forwardRef", title: "Forward Ref" },
+];
