@@ -23,6 +23,8 @@ import MemoizationHooksDemo from "./Components/OptimizationHooks/MemoizationHook
 import SwitchPlayer from "./Components/PlayerScores/SwitchPlayer.jsx";
 import HOCCounter from "./Components/HOC/HOCCounter.jsx";
 import DisplayCustomInput from "./Components/ForwardRef/DisplayCustomInput.jsx";
+import CustomError from "./Components/ErrorBoundary/CustomError.jsx";
+import HandleCustomError from "./Components/ErrorBoundary/HandleCustomError.jsx";
 
 const InputCaseChange = lazy(() => import("./Components/InputCaseChange.jsx"));
 
@@ -50,9 +52,11 @@ const router = createBrowserRouter(
       <Route path="/DayOfWeek" element={<DayOfWeek date="2024-08-24" />} />
       <Route path="/HOC-Example" element={<HOCCounter />} />
       <Route path="/forwardRef" element={<DisplayCustomInput />} />
+      <Route path="/ErrorBoundary" element={<HandleCustomError />} />
     </Route>
   )
 );
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>

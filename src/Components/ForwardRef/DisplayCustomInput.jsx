@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import CustomInput from "./CustomInput";
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 
 export default function DisplayCustomInput() {
   const inputRef = useRef(null);
@@ -20,9 +19,9 @@ export default function DisplayCustomInput() {
       <h1 className="text-3xl font-semibold mb-6">
         Demonstration of Forward Ref{" "}
       </h1>
-      <ErrorBoundary>
-        <CustomInput ref={undefined} />
-      </ErrorBoundary>
+
+      <CustomInput ref={inputRef} />
+
       <button type="submit" onClick={handleSubmission}>
         Submit{" "}
       </button>

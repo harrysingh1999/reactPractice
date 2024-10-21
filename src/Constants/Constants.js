@@ -42,6 +42,8 @@ export const navItems = [
   { path: "/StopWatch", title: "StopWatch" },
   { path: "/MemoizationHooksDemo", title: "MemoizationHooks Demo" },
   { path: "/SwitchPlayer", title: "Key Keyword usage" },
+  { path: "/ProgressBar", title: "Progress Bar" },
   { path: "/HOC-Example", title: "Higher Order Component" },
   { path: "/forwardRef", title: "Forward Ref" },
+  { path: "/ErrorBoundary", title: "ErrorBoundary" },
 ];

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { faq } from "../Constants/Constants";
 
 export default function Accordion() {
@@ -7,6 +7,26 @@ export default function Accordion() {
   const handleId = (id) => {
     setIndex(id);
   };
+
+  useEffect(() => {
+    const asyncCodeExample = async () => {
+      const myPromise = new Promise((resolve, rejected) => {
+        setTimeout(() => {
+          if (true) {
+            resolve("Promise Timer Executed");
+          } else {
+            rejected("rejected");
+          }
+        }, 2000);
+      });
+
+      let response = await myPromise;
+      console.log(response);
+      console.log("After timer log");
+    };
+
+    asyncCodeExample();
+  }, []);
 
   return (
     <>

@@ -12,10 +12,12 @@ export default function ProgressBar() {
         }
         return prevPercentage + 2;
       });
-    }, 70);
+    }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [percentage]);
+
+  
 
   return (
     <>
@@ -29,9 +31,8 @@ export default function ProgressBar() {
           <p
             style={{
               width: `${percentage}%`,
-              height: "100%",
-              backgroundColor: "#01F802",
             }}
+            className={`h-full bg-[#01F802]`}
           />
         </div>
       </div>
