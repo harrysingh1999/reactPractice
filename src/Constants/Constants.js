@@ -46,4 +46,5 @@ export const navItems = [
   { path: "/HOC-Example", title: "Higher Order Component" },
   { path: "/forwardRef", title: "Forward Ref" },
   { path: "/ErrorBoundary", title: "ErrorBoundary" },
+  { path: "/PingPongGame", title: "PingPong Game" },
 ];

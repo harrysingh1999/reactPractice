@@ -25,6 +25,7 @@ import HOCCounter from "./Components/HOC/HOCCounter.jsx";
 import DisplayCustomInput from "./Components/ForwardRef/DisplayCustomInput.jsx";
 import CustomError from "./Components/ErrorBoundary/CustomError.jsx";
 import HandleCustomError from "./Components/ErrorBoundary/HandleCustomError.jsx";
+import PingPong from "./Components/PingPong Score/PingPong.jsx";
 
 const InputCaseChange = lazy(() => import("./Components/InputCaseChange.jsx"));
 
@@ -53,6 +54,7 @@ const router = createBrowserRouter(
       <Route path="/HOC-Example" element={<HOCCounter />} />
       <Route path="/forwardRef" element={<DisplayCustomInput />} />
       <Route path="/ErrorBoundary" element={<HandleCustomError />} />
+      <Route path="/PingPongGame" element={<PingPong />} />
     </Route>
   )
 );
