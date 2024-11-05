@@ -38,7 +38,7 @@ const PingPong = () => {
         >
           {scoreP1}
         </span>
-        { scoreP1 === winningScore && <span>Wins!!!</span>}
+        {scoreP1 === winningScore && <span>Wins!!!</span>}
       </div>
       <div className="flex gap-2">
         <span>Player2 Score:</span>
@@ -54,7 +54,7 @@ const PingPong = () => {
         >
           {scoreP2}
         </span>
-        { scoreP2 === winningScore && <span>Wins!!!</span>}
+        {scoreP2 === winningScore && <span>Wins!!!</span>}
       </div>
 
       <label className="mt-4">
