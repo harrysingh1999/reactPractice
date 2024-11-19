@@ -47,4 +47,5 @@ export const navItems = [
   { path: "/forwardRef", title: "Forward Ref" },
   { path: "/ErrorBoundary", title: "ErrorBoundary" },
   { path: "/PingPongGame", title: "PingPong Game" },
+  { path: "/TicketBooking", title: "TicketBooking Platform" },
 ];

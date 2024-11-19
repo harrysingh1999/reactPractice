@@ -26,6 +26,7 @@ import DisplayCustomInput from "./Components/ForwardRef/DisplayCustomInput.jsx";
 import CustomError from "./Components/ErrorBoundary/CustomError.jsx";
 import HandleCustomError from "./Components/ErrorBoundary/HandleCustomError.jsx";
 import PingPong from "./Components/PingPong Score/PingPong.jsx";
+import TicketBooking from "./Components/TicketBooking.jsx";
 
 const InputCaseChange = lazy(() => import("./Components/InputCaseChange.jsx"));
 
@@ -55,6 +56,7 @@ const router = createBrowserRouter(
       <Route path="/forwardRef" element={<DisplayCustomInput />} />
       <Route path="/ErrorBoundary" element={<HandleCustomError />} />
       <Route path="/PingPongGame" element={<PingPong />} />
+      <Route path="/TicketBooking" element={<TicketBooking />} />
     </Route>
   )
 );
