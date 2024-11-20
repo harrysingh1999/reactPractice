@@ -49,3 +49,10 @@ export const navItems = [
   { path: "/PingPongGame", title: "PingPong Game" },
   { path: "/TicketBooking", title: "TicketBooking Platform" },
 ];
+
+
+export const seats = [
+  { section: "VIP Section", grid: 5, seats: 25 },
+  { section: "General Section", grid: 6, seats: 36 },
+  { section: "Economy Section", grid: 8, seats: 64 },
+];

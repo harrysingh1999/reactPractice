@@ -1,36 +1,10 @@
 import React, { useState } from "react";
+import { seats } from "../Constants/Constants";
 
 export default function TicketBooking() {
-  const [isClicked, setIsClicked] = useState(false);
   const [clickedSeats, setClickedSeats] = useState(0);
   const [clickedItem, setClickedItem] = useState([]);
-  const [bookedSeatsUI, setBookedSeatsUI] = useState();
-
-  const handleClick = (index, section) => {
-    setIsClicked(true);
-
-    setClickedSeats((prevState) => prevState + 1);
-    setClickedItem((prevState) => [
-      ...prevState,
-      { seat: index, category: section },
-    ]);
-  };
-
-  const bookedSeats = clickedItem.reduce((acc, curr) => {
-    acc[curr.category] = acc[curr.category]
-      ? [...acc[curr.category], curr.seat]
-      : [curr.seat];
-    return acc;
-  }, {});
-
-  const handleBooking = () => {
-    setBookedSeatsUI(
-      Object.entries(bookedSeats).map((item, i) => ({
-        section: item[0],
-        seat: item[0 + 1],
-      }))
-    );
-  };
+  const [bookedSeatsData, setBookedSeatsData] = useState();
 
   if (clickedSeats > 5) {
     setClickedSeats(0);
@@ -38,31 +12,57 @@ export default function TicketBooking() {
     alert("You can only book a maximum of 5 Seats");
   }
 
-  const seats = [
-    { section: "VIP Section", grid: 5, seats: 25 },
-    { section: "General Section", grid: 6, seats: 36 },
-    { section: "Economy Section", grid: 8, seats: 64 },
-  ];
+  const handleClick = (index, section) => {
+    setClickedSeats((prevState) => prevState + 1);
+    setClickedItem((prevState) => [
+      ...prevState,
+      { seat: index, category: section },
+    ]);
+  };
+
+  const handleBooking = () => {
+    window.scrollTo(0, 0);
+    const bookedSeats = clickedItem.reduce((acc, curr) => {
+      acc[curr.category] = acc[curr.category]
+        ? [...acc[curr.category], curr.seat]
+        : [curr.seat];
+      return acc;
+    }, {});
+
+    setBookedSeatsData(
+      Object.entries(bookedSeats).map((item, i) => ({
+        section: item[0],
+        seat: item[0 + 1],
+      }))
+    );
+  };
 
   return (
-    <div className="mx-10">
-      {bookedSeatsUI && (
-        <h1 className="text-3xl font-bold my-6 text-center">Booking Details</h1>
-      )}
-      {bookedSeatsUI?.map((item) => (
-        <div className="flex justify-center" key={item.section}>
-          <span>{item.section}: </span>
-          {item.seat.length > 1 ? (
-            item.seat.map((s) => (
-              <span className="mx-2" key={s}>
-                {++s}
-              </span>
-            ))
-          ) : (
-            <span className="mx-2">{++item.seat} </span>
-          )}
+    <div className="mx-10 mb-10">
+      <h1 className="text-4xl font-bold my-6 text-center">
+        Book Tickets Online
+      </h1>
+      {bookedSeatsData?.length > 0 && (
+        <div className="mb-10">
+          <h2 className="text-3xl text-green-700 font-bold mb-4 text-center">
+           Your Booking Details!!!
+          </h2>
+          {bookedSeatsData.map((item) => (
+            <div className="flex justify-center" key={item.section}>
+              <span>{item.section}: </span>
+              {item.seat.length > 1 ? (
+                item.seat.map((s) => (
+                  <span className="mx-2" key={s}>
+                    {++s}
+                  </span>
+                ))
+              ) : (
+                <span className="mx-2">{++item.seat} </span>
+              )}
+            </div>
+          ))}
         </div>
-      ))}
+      )}
       {seats.map((seat, idx) => {
         return (
           <div className="text-center mb-4" key={seat.section}>
@@ -83,7 +83,6 @@ export default function TicketBooking() {
                       (item) =>
                         item.seat === i && item.category === seat.section
                     ) &&
-                    isClicked &&
                     "bg-green-500 text-white cursor-not-allowed"
                   }`}
                   disabled={
@@ -103,12 +102,14 @@ export default function TicketBooking() {
           </div>
         );
       })}
-      <button
-        className="border border-black/40 p-2 rounded-lg"
-        onClick={handleBooking}
-      >
-        Confirm Booking
-      </button>
+      <div className="flex justify-center">
+        <button
+          className="border border-black/40 p-2 rounded-lg"
+          onClick={handleBooking}
+        >
+          Confirm Booking
+        </button>
+      </div>
     </div>
   );
 }
