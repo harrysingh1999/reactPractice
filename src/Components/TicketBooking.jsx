@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { seats } from "../Constants/Constants";
 
 export default function TicketBooking() {
@@ -7,10 +7,18 @@ export default function TicketBooking() {
   const [bookedSeatsData, setBookedSeatsData] = useState();
 
   if (clickedSeats > 5) {
-    setClickedSeats(0);
     setClickedItem([]);
+    setClickedSeats(0);
     alert("You can only book a maximum of 5 Seats");
   }
+
+  console.log(clickedItem);
+
+  const handleReset = () => {
+    window.scrollTo(0, 0);
+    setClickedItem([]);
+    setBookedSeatsData([]);
+  };
 
   const handleClick = (index, section) => {
     setClickedSeats((prevState) => prevState + 1);
@@ -21,6 +29,8 @@ export default function TicketBooking() {
   };
 
   const handleBooking = () => {
+    setClickedSeats(0);
+    setClickedItem([])
     window.scrollTo(0, 0);
     const bookedSeats = clickedItem.reduce((acc, curr) => {
       acc[curr.category] = acc[curr.category]
@@ -45,7 +55,7 @@ export default function TicketBooking() {
       {bookedSeatsData?.length > 0 && (
         <div className="mb-10">
           <h2 className="text-3xl text-green-700 font-bold mb-4 text-center">
-           Your Booking Details!!!
+            Your Booking Details!!!
           </h2>
           {bookedSeatsData.map((item) => (
             <div className="flex justify-center" key={item.section}>
@@ -79,6 +89,7 @@ export default function TicketBooking() {
                   key={i}
                   className={`border border-black/40 p-2 ${
                     clickedSeats <= 5 &&
+
                     clickedItem.some(
                       (item) =>
                         item.seat === i && item.category === seat.section
@@ -102,12 +113,18 @@ export default function TicketBooking() {
           </div>
         );
       })}
-      <div className="flex justify-center">
+      <div className="flex justify-center gap-6">
         <button
           className="border border-black/40 p-2 rounded-lg"
           onClick={handleBooking}
         >
           Confirm Booking
+        </button>
+        <button
+          className="border border-black/40 p-2 rounded-lg"
+          onClick={handleReset}
+        >
+          Reset
         </button>
       </div>
     </div>
