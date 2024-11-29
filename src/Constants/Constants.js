@@ -48,6 +48,7 @@ export const navItems = [
   { path: "/ErrorBoundary", title: "ErrorBoundary" },
   { path: "/PingPongGame", title: "PingPong Game" },
   { path: "/TicketBooking", title: "TicketBooking Platform" },
+  { path: "/UseReducerHook", title: "UseReducer Hook" },
 ];
 
 

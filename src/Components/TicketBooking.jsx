@@ -12,8 +12,6 @@ export default function TicketBooking() {
     alert("You can only book a maximum of 5 Seats");
   }
 
-  console.log(clickedItem);
-
   const handleReset = () => {
     window.scrollTo(0, 0);
     setClickedItem([]);
@@ -30,7 +28,7 @@ export default function TicketBooking() {
 
   const handleBooking = () => {
     setClickedSeats(0);
-    setClickedItem([])
+    setClickedItem([]);
     window.scrollTo(0, 0);
     const bookedSeats = clickedItem.reduce((acc, curr) => {
       acc[curr.category] = acc[curr.category]
@@ -89,7 +87,6 @@ export default function TicketBooking() {
                   key={i}
                   className={`border border-black/40 p-2 ${
                     clickedSeats <= 5 &&
-
                     clickedItem.some(
                       (item) =>
                         item.seat === i && item.category === seat.section
