@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { seats } from "../Constants/Constants";
 
 export default function TicketBooking() {
@@ -7,23 +7,33 @@ export default function TicketBooking() {
   const [bookedSeatsData, setBookedSeatsData] = useState();
 
   if (clickedSeats > 5) {
-    setClickedItem([]);
-    setClickedSeats(0);
     alert("You can only book a maximum of 5 Seats");
+    setClickedSeats(clickedItem.length);
   }
 
   const handleReset = () => {
     window.scrollTo(0, 0);
     setClickedItem([]);
+    setClickedSeats(0)
     setBookedSeatsData([]);
   };
 
+  console.log("clickedItem :", clickedItem);
+  console.log("clickedSeats :", clickedSeats);
+
   const handleClick = (index, section) => {
-    setClickedSeats((prevState) => prevState + 1);
-    setClickedItem((prevState) => [
-      ...prevState,
-      { seat: index, category: section },
-    ]);
+    setClickedSeats((prevCount) =>
+      clickedItem.findIndex((item) => item.seat === index)
+        ? prevCount + 1
+        : prevCount - 1
+    );
+    setClickedItem((prevState) => {
+      if (prevState.findIndex((item) => item.seat === index) && clickedItem.length < 5 && clickedSeats < 5 ) {
+        return [...prevState, { seat: index, category: section }];
+      } else {
+        return prevState.filter((item) => item.seat !== index);
+      }
+    });
   };
 
   const handleBooking = () => {
@@ -87,19 +97,20 @@ export default function TicketBooking() {
                   key={i}
                   className={`border border-black/40 p-2 ${
                     clickedSeats <= 5 &&
-                    clickedItem.some(
+                    clickedItem?.some(
                       (item) =>
                         item.seat === i && item.category === seat.section
                     ) &&
                     "bg-green-500 text-white cursor-not-allowed"
                   }`}
                   disabled={
-                    clickedSeats <= 5 &&
-                    clickedItem.some(
-                      (filteredItem) =>
-                        filteredItem.seat === i &&
-                        filteredItem.category === seat.section
-                    )
+                    clickedSeats > 5
+                    //  &&
+                    // clickedItem.some(
+                    //   (filteredItem) =>
+                    //     filteredItem.seat === i &&
+                    //     filteredItem.category === seat.section
+                    // )
                   }
                   onClick={() => handleClick(i, seat.section)}
                 >
